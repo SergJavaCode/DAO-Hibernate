@@ -1,11 +1,9 @@
 package ru.sergjava.daohibernate.service;
 
-import org.hibernate.query.SortDirection;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import ru.sergjava.daohibernate.model.Person;
 import ru.sergjava.daohibernate.model.PersonID;
-import ru.sergjava.daohibernate.repository.PersonRepository;
 import ru.sergjava.daohibernate.repository.PersonRepositoryJPA;
 
 import java.util.List;
@@ -16,7 +14,7 @@ public class PersonsServiceImpl implements PersonsService {
 
     private final PersonRepositoryJPA repositoryJPA;
 
-    public PersonsServiceImpl(PersonRepository repository, PersonRepositoryJPA repositoryJPA) {
+    public PersonsServiceImpl(PersonRepositoryJPA repositoryJPA) {
 
         this.repositoryJPA = repositoryJPA;
     }
