@@ -1,5 +1,7 @@
 package ru.sergjava.daohibernate.service;
 
+import org.hibernate.query.SortDirection;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import ru.sergjava.daohibernate.model.Person;
 import ru.sergjava.daohibernate.model.PersonID;
@@ -43,7 +45,9 @@ public class PersonsServiceImpl implements PersonsService {
 
     @Override
     public List<Person> findByPersonIDAgeLessThan(Integer age) {
-        return repositoryJPA.findByPersonIDAgeLessThan(age);
+        return repositoryJPA.findByPersonIDAgeLessThan(age, Sort.by(
+                new Sort.Order(Sort.Direction.ASC,"personID.age")
+        ));
     }
 
     @Override

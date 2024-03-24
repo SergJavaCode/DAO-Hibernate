@@ -1,5 +1,6 @@
 package ru.sergjava.daohibernate.repository;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import ru.sergjava.daohibernate.model.Person;
@@ -12,7 +13,7 @@ import java.util.Optional;
 public interface PersonRepositoryJPA extends JpaRepository<Person, PersonID> {
     List<Person> findByCityOfLiving(String cityOfLiving);
 
-    List<Person> findByPersonIDAgeLessThan(Integer age);
+    List<Person> findByPersonIDAgeLessThan(Integer age, Sort sort);
 
     List<Optional<Person>> findByPersonIDNameAndPersonIDSurname(String name, String surname);
 }
