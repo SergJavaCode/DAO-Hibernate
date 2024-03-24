@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "7314f5e0-e786-4f31-a3c0-7805e1827b5c",
+		"name": "JpaTask",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31890795",
+		"_collection_link": "https://winter-water-958016.postman.co/workspace/New-Team-Workspace~d4262254-6405-469a-a514-78ead3b0dc4f/collection/31890795-7314f5e0-e786-4f31-a3c0-7805e1827b5c?action=share&source=collection_link&creator=31890795"
+	},
+	"item": [
+		{
+			"name": "save",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": {
+						"accessTokenUrl": "http://site.ru/get_token.php",
+						"addTokenTo": "header"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"personID\": {\r\n        \"name\": \"Chukcha\",\r\n        \"surname\": \"Lubovski\",\r\n        \"age\": 55\r\n    },\r\n    \"phone\": 79263566657,\r\n    \"cityOfLiving\": \"Cosablanca\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/persons/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"persons",
+						"save"
+					],
+					"query": [
+						{
+							"key": null,
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find-by-id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Kostia\",\r\n    \"surname\": \"Lukin\",\r\n    \"age\": 28\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/persons/find-by-id"
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Sasha\",\r\n    \"surname\": \"Minin\",\r\n    \"age\": 34\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/persons/delete-by-id"
+			},
+			"response": []
+		},
+		{
+			"name": "find-by-city",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/persons/find-by-city?city=Moscow",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"persons",
+						"find-by-city"
+					],
+					"query": [
+						{
+							"key": "city",
+							"value": "Moscow"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find-by-age-less-than",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/persons/find-by-age-less-than?age=30",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"persons",
+						"find-by-age-less-than"
+					],
+					"query": [
+						{
+							"key": "age",
+							"value": "30"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find-by-name-surname",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/persons/find-by-name-surname?name=Vasia&surname=Pupkin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"persons",
+						"find-by-name-surname"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Vasia"
+						},
+						{
+							"key": "surname",
+							"value": "Pupkin"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
